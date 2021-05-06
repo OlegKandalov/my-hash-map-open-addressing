@@ -55,7 +55,7 @@ public class HashMap {
         return nodeCount;
     }
 
-    private int getIndexForBucket(int key) {
+    public int getIndexForBucket(int key) {
         String keyString = key + "";
         int hashCode = keyString.hashCode();
         return (hashCode + probe) % length;
@@ -83,6 +83,10 @@ public class HashMap {
             }
         }
         return newArrayForBuckets;
+    }
+
+    public int getLength() {
+        return length;
     }
 
     private static class Node {
